@@ -51,11 +51,11 @@ def format_impedance(z):
         parts.append(f"{z_scaled.real:.3g}")
     if abs(z_scaled.imag) > 1e-9:
         sign = "+" if z_scaled.imag > 0 and parts else ""
-        parts.append(f"{sign}{z_scaled.imag:.3g}j")
+        parts.append(f"{sign}j{z_scaled.imag:.3g}")
     if not parts:
         parts.append("0")
 
-    # return " ".join(parts) + " " + unit
+    return " ".join(parts) + " " + unit
 
 def main():
     try:
